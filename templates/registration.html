@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body class="bg-register">
+
+    <div class="box">
+        <h2>Register</h2>
+        <form method="post" action="/register">
+            <label>Email:</label>
+            <input type="email" name="email" required>
+
+            {% if error %}
+                <div class="error">{{ error }}</div>
+            {% endif %}
+
+            <label>Password:</label>
+            <input type="password" name="password" required>
+
+            <input type="submit" value="Register" class="btn">
+        </form>
+
+        <p class="bottom-text">Already have an account? <a href="/login">Login here</a></p>
+    </div>
+</body>
+</html>

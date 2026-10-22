@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>House Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body class="bg-prediction">
+
+    <div class="box">
+        <h2>House Price Prediction</h2>
+
+        <form method="post" action="/predict">
+            <label>Number of Bedrooms:</label>
+            <input type="number" name="bedrooms" required>
+
+            <label>Number of Bathrooms:</label>
+            <input type="number" name="bathrooms" required>
+
+            <label>Living Area (sq ft):</label>
+            <input type="number" name="sqft_living" step="0.01" required>
+
+            <label>Lot Size (sq ft):</label>
+            <input type="number" name="sqft_lot" step="0.01">
+
+            <label>Number of Floors:</label>
+            <input type="number" name="floors" step="0.1">
+
+            <label>Has Garage:</label>
+            <select name="garage">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+
+            <label>House Age (years):</label>
+            <input type="number" name="age" required>
+
+            <input type="submit" value="Predict" class="btn">
+        </form>
+    </div>
+
+    <p class="bottom-text"><a href="/dashboard">Back to Dashboard</a></p>
+
+</body>
+</html>
